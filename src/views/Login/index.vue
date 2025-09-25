@@ -20,7 +20,7 @@ const rules = {
     { required:true, message:'密码不能为空',trigger:'blur'},
     { min:6 ,max:14,message:'长度为6-14位',trigger:'blur'}
   ],
-  agree:[
+  agree:[      //Element Plus 的表单自定义校验规则，用来校验“是否勾选协议”
     { 
       validator: (rule, value ,callBack) =>{
         console.log(value)

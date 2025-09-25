@@ -9,7 +9,7 @@ import DetailHot from './components/DetailHot.vue'
 import { ElMessage } from 'element-plus'  //element的提示
 import 'element-plus/theme-chalk/el-message.css'
 import { useCartStore } from '@/stores/cartStore'
-
+//拿到详情页的商品数据
 const route = useRoute()
 const detail = ref({})
 const getDetail  = async (id) =>{
@@ -161,7 +161,7 @@ const addCart = ()=>{
                     </li>
                   </ul>
                   <!-- 图片 -->
-                  <img v-for="item in detail.details.pictures" :key="item" :src="item" alt="">
+                  <img v-for="item in detail.details.pictures" :key="item" v-img-lazy="item" alt="">
                 </div>
               </div>
             </div>

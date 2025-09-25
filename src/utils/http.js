@@ -30,7 +30,7 @@ httpInstance.interceptors.response.use(res => res.data, e => {
   if(e.response.status === 401 ){
     //清除个人信息
     const UserStore = useUserStore()
-    // const router = useRouter()
+    // const router = useRouter() js这里用不了 vue模板里面才可以
     UserStore.clearUserInfo()
     //跳转登录页面
     router.push('/login')

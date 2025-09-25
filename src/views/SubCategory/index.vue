@@ -33,7 +33,7 @@ onMounted(() => {
 })
 //tab切换回调
 //当Tabs 组件触发 tab-change 事件时，执行我定义的 tabChange 函数
-const tabChange = () =>{
+const tabChange = () =>{ //应该是@tab-change="tabChange"会默认返回一个参数 也就是当前切换到哪个了
   console.log('tab切换了!!!',sendDate.value.sortField) 
   sendDate.value.page = 1 
   getGoodsList(sendDate.value)
@@ -70,7 +70,7 @@ const load = async () =>{
         <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
         <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
       </el-tabs>
-      <div v-infinite-scroll="load" class="body" :infinite-scroll-disabled="disabled">
+      <div v-infinite-scroll="load" class="body" :infinite-scroll-disabled="disabled">   <!-- 使用 elementPlus 提供的 v-infinite-scroll 指令监听是否满足触底条件 -->
         <!-- 商品列表-->
         <GoodsItem v-for="item in goodsList" :key="item.id" :i="item"></GoodsItem>
       </div>

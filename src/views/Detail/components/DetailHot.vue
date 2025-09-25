@@ -40,10 +40,10 @@ onMounted(()=>{
     <h3>{{ title }}</h3>
     <!-- 商品区块 -->
     <RouterLink v-for="item in hotList" :key="item.id" :to="`/detail/${item.id}`" class="goods-item">
-      <img :src="item.picture" alt="" />
+      <img v-img-lazy="item.picture" alt="" />
       <p class="name ellipsis">{{ item.name }}</p>
-      <p class="desc ellipsis">{{ item.desc }}/p>
-      </p><p class="price">&yen;{{ item.price }}0</p>
+      <p class="desc ellipsis">{{ item.desc }}</p>
+      <p class="price">&yen;{{ item.price }}0</p>
     </RouterLink>
   </div>
 </template>
